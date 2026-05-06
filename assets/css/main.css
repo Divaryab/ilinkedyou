@@ -130,6 +130,20 @@ img {
   color: #555;
 }
 
+.result-text {
+  color: #555;
+  line-height: 1.7;
+}
+
+.result-text strong {
+  color: #2f2f2f;
+}
+
+.result-detail {
+  font-style: italic;
+  color: #666;
+}
+
 .work-page .hero-micro {
   font-size: 14px;
   color: #888;
@@ -539,7 +553,7 @@ img {
   height: 54px;
 
   border: none;
-  border-radius: 18px;
+  border-radius: 14px;
 
   background: rgba(212, 124, 60, 0.92);
   color: #fff;
@@ -574,7 +588,7 @@ img {
 }
 
 .back-to-top:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.05);
   background: #c86d2f;
 }
 
@@ -727,4 +741,132 @@ img {
     right: 18px;
     bottom: 18px;
   }
+}
+
+/* =========================================
+   WORK PAGE IMPROVEMENTS (NEW)
+========================================= */
+
+/* HERO TIGHTER */
+.work-page .hero-section {
+  padding-top: 150px;
+  padding-bottom: 90px;
+}
+
+.work-page .hero-section h1 {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* CASES IMPROVED */
+.work-page .service-card {
+  text-align: left;
+}
+
+.work-page .service-card h4 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.work-page .service-card p {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.work-page .service-card ul {
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.work-page .service-card ul li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* RESULT HIGHLIGHT */
+.work-page .result-text {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: #faf6f2;
+  border-radius: 12px;
+  border: 1px solid #f1e6dc;
+}
+
+/* WHAT THIS MEANS */
+.work-page section h3 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.work-page section ul {
+  margin-top: 20px;
+}
+
+.work-page section ul li {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* WHO CARDS TIGHTER */
+.work-page .workflow-card h5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.work-page .workflow-card p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* CTA STRONGER */
+.work-page .section-padding.text-center:last-of-type {
+  background: #fff;
+  border-top: 1px solid #ece8e4;
+}
+
+.work-page .section-padding.text-center:last-of-type h3 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.work-page .section-padding.text-center:last-of-type p {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* BUTTON EMPHASIS */
+.work-page .btn-primary-custom {
+  padding: 16px 32px;
+  font-size: 16px;
+  box-shadow: 0 10px 25px rgba(212, 124, 60, 0.25);
+}
+
+.work-page .btn-primary-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(212, 124, 60, 0.35);
+}
+
+.work-page section ul {
+  margin-top: 28px;
+}
+
+.work-page section ul li {
+  background: #fff;
+  border: 1px solid #ece8e4;
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.work-page section p:last-of-type {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+.work-page section.text-center p {
+  max-width: 720px;
+  margin-inline: auto;
 }
