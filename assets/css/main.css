@@ -109,6 +109,33 @@ img {
   max-width: 580px;
 }
 
+.work-page .hero-text {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.work-page .hero-trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.work-page .hero-trust-line span {
+  background: #fff;
+  border: 1px solid #ece8e4;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.work-page .hero-micro {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
 .hero-buttons {
   margin-top: 36px;
   display: flex;
