@@ -67,6 +67,10 @@ h6 {
   font-family: "Instrument Serif", serif;
 }
 
+.about-section p {
+  margin-bottom: 1.7rem;
+}
+
 p {
   color: #aeb4c0;
 }
@@ -437,6 +441,7 @@ a {
 .tool-description,
 .contact-link-card small {
   color: #939cad;
+  line-height: 1.8;
 }
 
 .service-icon,
@@ -654,6 +659,10 @@ a {
 
   .contact-links {
     grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 760px;
+    margin: 0 auto;
   }
 }
 
@@ -699,6 +708,7 @@ a {
   .contact-link-card {
     padding: 28px;
     border-radius: 24px;
+    min-height: 200px;
   }
 
   .section-title h2,
@@ -710,6 +720,8 @@ a {
 
   .contact-link-card {
     align-items: flex-start;
+    padding: 2rem 2rem;
+    min-height: 170px;
   }
 
   .contact-link-card small {
@@ -880,4 +892,122 @@ a {
   color: #c8d4ff !important;
 
   opacity: 1;
+}
+
+.about-section .col-lg-7 {
+  max-width: 720px;
+}
+
+.faq-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.faq-card {
+  padding: 2rem 2.2rem;
+  border-radius: 26px;
+  background: rgba(20, 26, 48, 0.55);
+  border: 1px solid rgba(120, 140, 255, 0.08);
+  margin-bottom: 1.4rem;
+}
+
+.faq-card h5 {
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+}
+
+.faq-card p {
+  margin-bottom: 0;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* FAQ Accordion */
+
+.faq-accordion {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: rgba(20, 26, 48, 0.55);
+  border: 1px solid rgba(120, 140, 255, 0.08);
+  border-radius: 24px !important;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.faq-item .accordion-button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 1.45rem 1.8rem;
+  box-shadow: none !important;
+  transition: all 0.28s ease;
+}
+
+.faq-item .accordion-button:not(.collapsed) {
+  background: transparent;
+  color: #ffffff;
+}
+
+.faq-item .accordion-button::after {
+  filter: invert(1) brightness(1.4);
+  opacity: 0.7;
+}
+
+.faq-item .accordion-body {
+  padding: 0 1.8rem 1.8rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.9;
+  font-size: 1.02rem;
+}
+
+.faq-item .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-collapse {
+  transition: all 0.35s ease;
+}
+
+.faq-item .accordion-button::after {
+  transition:
+    transform 0.35s ease,
+    opacity 0.3s ease;
+}
+
+.faq-item:has(.accordion-button:not(.collapsed)) {
+  background: rgba(24, 32, 58, 0.72);
+  border-color: rgba(120, 140, 255, 0.14);
+}
+
+.faq-item .accordion-button:not(.collapsed) {
+  color: #ffffff;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-link-card {
+  flex: 1;
+  max-width: 420px;
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+}
+
+.contact-link-card div:last-child {
+  text-align: left;
 }
