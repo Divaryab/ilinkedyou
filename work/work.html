@@ -43,8 +43,21 @@
             class="navbar-brand d-flex align-items-center"
             href="../index.html"
           >
-            <img src="../assets/img/logo.png" class="logo-icon" />
-            <span class="brand-text">iLinkedYou</span>
+            <img
+              src="../assets/img/logo.png"
+              class="logo-light logo-icon"
+              alt="Logo"
+            />
+
+            <img
+              src="../assets/img/logo-dark.png"
+              class="logo-dark logo-icon"
+              alt="Logo"
+            />
+
+            <span class="brand-i">i</span>
+            <span class="brand-linked">Linked</span>
+            <span class="brand-you">You</span>
           </a>
 
           <button
@@ -62,7 +75,22 @@
           >
             <ul class="navbar-nav align-items-lg-center">
               <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link" href="../index.html"> Home </a>
+              </li>
+
+              <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                <div class="header-actions">
+                  <button id="themeToggle" class="theme-toggle">
+                    <i class="bi bi-moon-stars"></i>
+                  </button>
+
+                  <a
+                    href="../index.html#contact"
+                    class="btn btn-primary-custom"
+                  >
+                    Contact
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -70,227 +98,214 @@
       </div>
     </header>
 
+    <!-- Work Hero -->
+    <section class="hero-section work-hero">
+      <div class="hero-blur hero-blur-1"></div>
+      <div class="hero-blur hero-blur-2"></div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <div class="hero-content" data-aos="fade-up">
+              <span class="hero-label"> My Work </span>
+
+              <h1>Real Business Experience</h1>
+
+              <p class="hero-text">
+                Trade coordination, supplier communication, and operational
+                support across international business activities.
+              </p>
+
+              <div class="hero-trust-line justify-content-center">
+                <span>45+ Export Shipments</span>
+                <span>China • UAE • India</span>
+                <span>International Coordination</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CASES -->
     <section class="section-padding">
       <div class="container">
-        <div style="text-align: center; padding: 20px">
-          <h3>Real Trade & Operations Experience</h3>
-        </div>
+        <!-- EXPERIENCE HIGHLIGHTS -->
 
-        <div class="row g-4">
-          <!-- Case 1 -->
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="service-card">
-              <h4>
-                Coordinated 45+ Export Shipments Across UAE, India & China
-              </h4>
+        <section class="section-padding">
+          <div class="container">
+            <div class="text-center mb-5">
+              <h3>Experience Highlights</h3>
+            </div>
 
-              <p class="mt-3">
-                Supported international shipment operations across suppliers,
-                buyers, logistics teams, and shipping partners.
-              </p>
+            <div class="row g-4 justify-content-center">
+              <!-- Card 1 -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="service-card h-100">
+                  <h4>45+ Export Shipments</h4>
 
-              <p><strong>What I handled:</strong></p>
+                  <ul>
+                    <li>Supplier & client communication</li>
+                    <li>Shipping documentation</li>
+                    <li>Container booking & tracking</li>
+                    <li>Reporting & follow-ups</li>
+                  </ul>
 
-              <ul>
-                <li>Supplier and client communication</li>
-                <li>Shipping documents and coordination</li>
-                <li>Container booking and shipment tracking</li>
-                <li>Operational follow-ups and reporting</li>
-              </ul>
+                  <p class="result-text">
+                    ✓ Smoother shipments and fewer delays.
+                  </p>
+                </div>
+              </div>
 
-              <p>
-                Required ongoing coordination across multiple countries, time
-                zones, and operational workflows.
-              </p>
+              <!-- Card 2 -->
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="120"
+              >
+                <div class="service-card h-100">
+                  <h4>Supplier Sourcing & Imports</h4>
 
-              <p class="result-text">
-                <strong>Result:</strong>
-                Smoother shipment flow, reduced delays, and more reliable
-                communication.
-              </p>
+                  <ul>
+                    <li>Supplier sourcing</li>
+                    <li>Factory coordination</li>
+                    <li>Price clarification</li>
+                    <li>Shipment tracking</li>
+                  </ul>
+
+                  <p class="result-text">
+                    ✓ More reliable sourcing and smoother execution.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="240"
+              >
+                <div class="service-card h-100">
+                  <h4>Daily Operations Support</h4>
+
+                  <ul>
+                    <li>Supplier & client communication</li>
+                    <li>Task tracking</li>
+                    <li>Workflow coordination</li>
+                    <li>Issue resolution</li>
+                  </ul>
+
+                  <p class="result-text">
+                    ✓ Better visibility and structured operations.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- Case 2 -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="120">
-            <div class="service-card">
-              <h4>Managed Supplier Sourcing & Imports from China</h4>
-
-              <p class="mt-3">
-                Supported businesses sourcing products from Chinese suppliers
-                and coordinating the import process.
-              </p>
-
-              <p><strong>What I handled:</strong></p>
-
-              <ul>
-                <li>Supplier sourcing and communication</li>
-                <li>Factory coordination and negotiations</li>
-                <li>Shipment and delivery tracking</li>
-                <li>Import-related operational support</li>
-              </ul>
-
-              <p>
-                Required managing supplier communication, pricing clarity, and
-                shipment coordination.
-              </p>
-
-              <p class="result-text">
-                <strong>Result:</strong>
-                More reliable sourcing, smoother coordination, and fewer
-                communication issues.
-              </p>
-            </div>
-          </div>
-
-          <!-- Case 3 -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <h4>Supported Daily International Operations & Coordination</h4>
-
-              <p class="mt-3">
-                Helped businesses manage ongoing communication, coordination,
-                and operational follow-through.
-              </p>
-
-              <p><strong>What I handled:</strong></p>
-
-              <ul>
-                <li>Daily supplier and client communication</li>
-                <li>Task tracking and operational follow-ups</li>
-                <li>Reporting and workflow coordination</li>
-                <li>Issue handling across ongoing operations</li>
-              </ul>
-
-              <p>
-                Required staying organized across multiple moving parts and
-                maintaining operational continuity.
-              </p>
-
-              <p class="result-text">
-                <strong>Result:</strong>
-                Clearer communication, better coordination, and more structured
-                daily operations.
-              </p>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
     </section>
 
     <!-- WHAT THIS MEANS -->
     <section class="section-padding text-center">
       <div class="container">
-        <h3>What This Means for Your Business</h3>
+        <!-- WHY IT MATTERS -->
 
-        <p>
-          Clear communication, organized coordination, and reliable
-          follow-through across your international operations.
-        </p>
+        <section class="section-padding text-center">
+          <div class="container">
+            <h3>Why It Matters</h3>
 
-        <ul style="list-style: none; padding: 0">
-          <li>Faster communication and follow-ups</li>
+            <p>Reliable support behind your daily operations.</p>
 
-          <li>Fewer delays and misunderstandings</li>
+            <ul style="list-style: none; padding: 0">
+              <li>✓ Faster follow-ups</li>
+              <li>✓ Fewer delays</li>
+              <li>✓ Better visibility</li>
+              <li>✓ Clearer communication</li>
+            </ul>
 
-          <li>Better visibility across operations</li>
-
-          <li>More reliable day-to-day coordination</li>
-        </ul>
-
-        <p class="mt-4">So you can stay focused on growing your business.</p>
+            <p class="mt-4">So you can focus on growing your business.</p>
+          </div>
+        </section>
       </div>
     </section>
 
     <!-- WHO I WORK WITH -->
     <section class="section-padding">
       <div class="container text-center">
-        <span class="section-label"> Typical Clients </span>
+        <!-- TYPICAL CLIENTS -->
 
-        <h2>Who I Work Best With</h2>
+        <section class="section-padding">
+          <div class="container text-center">
+            <span class="section-label"> Typical Clients </span>
 
-        <p class="mb-5">
-          Businesses managing suppliers, shipments, international communication,
-          and ongoing operational coordination.
-        </p>
+            <h2>Who I Work With</h2>
 
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="workflow-card h-100">
-              <h5>Import & Export Businesses</h5>
+            <p class="mb-5">
+              Businesses that need reliable support behind daily operations.
+            </p>
 
-              <p>Managing suppliers, shipments, and cross-border operations.</p>
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-3">
+                <div class="workflow-card h-100">
+                  <h5>Importers & Exporters</h5>
+
+                  <p>Managing international suppliers and shipments.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <div class="workflow-card h-100">
+                  <h5>Trading Companies</h5>
+
+                  <p>Working across multiple suppliers and markets.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <div class="workflow-card h-100">
+                  <h5>Growing Businesses</h5>
+
+                  <p>Expanding faster than internal resources allow.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <div class="workflow-card h-100">
+                  <h5>Business Owners</h5>
+
+                  <p>Looking for dependable operational support.</p>
+                </div>
+              </div>
             </div>
+
+            <p class="text-center mt-5">
+              Experience across the UAE, China, India, Canada, and international
+              markets.
+            </p>
           </div>
-
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="workflow-card h-100">
-              <h5>Trading Companies</h5>
-
-              <p>
-                Coordinating buyers, suppliers, and international communication.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="workflow-card h-100">
-              <h5>Growing Businesses</h5>
-
-              <p>
-                Expanding operations without a full internal coordination team.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="workflow-card h-100">
-              <h5>Business Owners</h5>
-
-              <p>
-                Needing reliable follow-ups, coordination, and operational
-                support.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p class="text-center mt-5" style="color: #777">
-          Experience working with businesses across the UAE, China, India,
-          Canada, and international markets.
-        </p>
+        </section>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="section-padding text-center">
       <div class="container">
-        <h3>Need Reliable Trade Coordination?</h3>
+        <h3>Need Support?</h3>
 
-        <p class="mb-4">
-          If you're managing suppliers, shipments, international communication,
-          or ongoing follow-ups, I can help keep operations organized and moving
-          smoothly.
-        </p>
+        <p class="mb-4">Let's discuss your business and see if I can help.</p>
 
         <a href="../index.html#contact" class="btn btn-primary-custom">
           Let’s Connect
         </a>
 
-        <p class="mt-3" style="color: #777">
-          Simple conversation. No pressure.
-        </p>
+        <p class="mt-5">Simple conversation. No pressure.</p>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer text-center">
-      <p>© iLinkedYou • International Trade Coordination</p>
+      <p>© iLinkedYou</p>
     </footer>
 
     <button id="backToTop" class="back-to-top">
@@ -301,32 +316,6 @@
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/aos/aos.js"></script>
 
-    <script>
-      AOS.init({
-        duration: 900,
-        easing: "ease-out",
-        once: true,
-        offset: 80,
-      });
-    </script>
-
-    <script>
-      const backToTopButton = document.getElementById("backToTop");
-
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 500) {
-          backToTopButton.classList.add("show");
-        } else {
-          backToTopButton.classList.remove("show");
-        }
-      });
-
-      backToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
