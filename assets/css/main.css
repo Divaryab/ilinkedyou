@@ -1167,3 +1167,15 @@ img {
 [data-theme="dark"] .navbar-toggler-icon {
   filter: invert(1);
 }
+
+.language-switch {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-nav);
+  transition: var(--transition);
+}
+
+.language-switch:hover {
+  color: var(--color-primary);
+}
