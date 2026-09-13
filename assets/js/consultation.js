@@ -20,21 +20,23 @@
     const installments = value('payment') === 'installments';
     deposit.hidden = !installments;
     deposit.querySelectorAll('input').forEach(input => { input.disabled = !installments; input.required = installments; });
-    const email = value('contact_method') === 'email';
-    contact.type = email ? 'email' : 'tel';
-    contact.autocomplete = email ? 'email' : 'tel';
-    contact.placeholder = email ? 'name@example.com' : '+995 5XX XXX XXX';
-    document.querySelector('[data-contact-label]').textContent = email ? 'آدرس ایمیل' : 'شماره واتساپ با کد کشور';
-    document.querySelector('[data-contact-hint]').textContent = email ? 'پاسخ را به همین آدرس ارسال می‌کنیم.' : 'شماره را با + و کد کشور وارد کنید؛ مثلاً +995…';
+    const method = value('contact_method');
+    const email = method === 'email', telegram = method === 'telegram';
+    contact.type = email ? 'email' : telegram ? 'text' : 'tel';
+    contact.autocomplete = email ? 'email' : telegram ? 'off' : 'tel';
+    contact.placeholder = email ? 'name@example.com' : telegram ? '@username' : '+995 5XX XXX XXX';
+    document.querySelector('[data-contact-label]').textContent = email ? 'آدرس ایمیل' : telegram ? 'نام کاربری تلگرام' : method === 'phone' ? 'شماره تلفن با کد کشور' : 'شماره واتساپ با کد کشور';
+    document.querySelector('[data-contact-hint]').textContent = email ? 'پاسخ را به همین آدرس ارسال می‌کنم.' : telegram ? 'نام کاربری حساب خودتان را وارد کنید؛ مثلاً @username، نه نام نمایشی یا نام ربات.' : 'شماره را با + و کد کشور وارد کنید؛ مثلاً +995…';
     contact.setCustomValidity('');
   }
   function validate() {
     if (step === 2) {
       contact.value = normalizeDigits(contact.value.trim());
-      if (value('contact_method') === 'whatsapp') {
+      if (['whatsapp', 'phone'].includes(value('contact_method'))) {
         contact.value = contact.value.replace(/[\s()-]/g, '');
         contact.setCustomValidity(/^\+[1-9]\d{7,14}$/.test(contact.value) ? '' : 'شماره را با + و کد کشور وارد کنید.');
       }
+      if (value('contact_method') === 'telegram') contact.setCustomValidity(/^@?[A-Za-z0-9_]{1,32}$/.test(contact.value) ? '' : 'نام کاربری تلگرام را با حروف انگلیسی، عدد یا زیرخط وارد کنید.');
       form.elements.full_name.value = form.elements.full_name.value.trim();
     }
     const invalid = [...steps[step].querySelectorAll('input, select, textarea')].find(input => !input.disabled && !input.checkValidity());
@@ -109,8 +111,10 @@
       form.hidden = true; document.querySelector('.consultation-progress').hidden = true;
       const success = document.querySelector('[data-success]'); success.hidden = false;
       success.querySelector('[data-reference]').textContent = requestId;
+      success.querySelector('[data-contact-method]').textContent = { phone: 'تماس تلفنی', whatsapp: 'واتساپ', telegram: 'تلگرام', email: 'ایمیل' }[payload.contact_method];
       const lines = [...form.querySelector('[data-summary]').children].map(p => p.textContent);
       const text = `سلام علی، درخواست مشاوره خرید من در سایت ثبت شد.\nنام: ${payload.full_name}\n${lines.join('\n')}\nکد پیگیری: ${requestId}`;
+      success.querySelector('a').hidden = payload.contact_method !== 'whatsapp';
       success.querySelector('a').href = 'https://wa.me/995598088750?text=' + encodeURIComponent(text);
       success.querySelector('h3').focus();
     } catch (e) {

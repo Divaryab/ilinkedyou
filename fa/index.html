@@ -45,8 +45,8 @@
     />
     <link rel="stylesheet" href="../assets/css/site.css" />
     <script src="../assets/js/site.js" defer></script>
-    <link rel="stylesheet" href="../assets/css/consultation.css" />
-    <script src="../assets/js/consultation.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/consultation.css?v=20260913-contact" />
+    <script src="../assets/js/consultation.js?v=20260913-contact" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">رفتن به محتوای اصلی</a>
@@ -585,7 +585,7 @@
                     required
                 /></label>
                 <fieldset>
-                  <legend>راه ارتباطی ترجیحی</legend>
+                  <legend>ترجیح می‌دهید از چه راهی با شما در تماس باشم؟</legend>
                   <div class="consultation-options">
                     <label class="consultation-option"
                       ><input
@@ -602,6 +602,8 @@
                         value="email"
                       />ایمیل</label
                     >
+                    <label class="consultation-option"><input type="radio" name="contact_method" value="phone" />تماس تلفنی</label>
+                    <label class="consultation-option"><input type="radio" name="contact_method" value="telegram" />تلگرام</label>
                   </div>
                 </fieldset>
                 <label class="consultation-field"
@@ -669,12 +671,11 @@
               </div>
             </form>
             <div data-success class="consultation-success" hidden role="status">
-              <p class="eyebrow">✓ درخواست دریافت شد</p>
-              <h3 tabindex="-1">درخواست شما ثبت شد</h3>
-              <p>
-                علی اطلاعات شما را بررسی می‌کند و از راه ارتباطی انتخاب‌شده با
-                شما تماس می‌گیرد.
+              <h3 tabindex="-1" class="consultation-success-title"><span>درخواست شما ثبت شد</span><span aria-hidden="true" class="consultation-success-check">✓</span></h3>
+              <p>سلام و سپاس از پیام شما،<br />
+                درخواستتان وصول شد، بررسی می‌کنم و در سریع‌ترین زمان ممکن از طریق «<span data-contact-method>واتساپ</span>» با شما در تماس خواهم بود.
               </p>
+              <p>روزتان همراه با آرامش و خبرهای خوب<br />علی | <bdi dir="ltr">iLinkedYou</bdi></p>
               <p>
                 <small>کد پیگیری</small
                 ><bdi data-reference style="overflow-wrap: anywhere"></bdi>

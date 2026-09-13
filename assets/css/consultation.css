@@ -32,3 +32,6 @@
 .consultation-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 @media (max-width: 900px) { .consultation-grid { grid-template-columns: 1fr; gap: 24px; } .consultation-intro { padding: 0; } }
 @media (max-width: 480px) { .consultation-card { padding: 22px 16px; } .consultation-options { grid-template-columns: 1fr; } .consultation-controls .button { padding-inline: 16px; } }
+
+.consultation-success-title { display: flex; flex-direction: row; direction: rtl; align-items: baseline; gap: .5em; }
+.consultation-success-check { direction: ltr; unicode-bidi: isolate; flex: none; color: var(--accent, #176a65); }
