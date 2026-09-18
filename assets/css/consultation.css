@@ -35,3 +35,9 @@
 
 .consultation-success-title { display: flex; flex-direction: row; direction: rtl; align-items: baseline; gap: .5em; }
 .consultation-success-check { direction: ltr; unicode-bidi: isolate; flex: none; color: var(--accent, #176a65); }
+
+/* Mobile polish */
+@media (max-width: 480px) {
+  .consultation-progress { gap: 6px; font-size: .72rem; }
+  .consultation-progress li { padding-top: 8px; }
+}

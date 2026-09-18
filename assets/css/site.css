@@ -77,9 +77,31 @@ section[id] { scroll-margin-top: 20px; }
   white-space: nowrap;
 }
 .brand span { color: #508469; }
-.site-nav { display: flex; align-items: center; gap: 25px; font-size: .86rem; }
+.site-nav { display: flex; align-items: center; gap: 23px; font-size: .86rem; }
+.site-nav > a { white-space: nowrap; }
 .site-nav > a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 6px; }
-.nav-contact { border: 1px solid #b8c9bc; padding: 9px 18px; border-radius: 6px; white-space: nowrap; }
+.nav-login {
+  color: var(--muted);
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 20px;
+  margin-inline-start: 2px;
+}
+.nav-login:hover { color: var(--ink); }
+.nav-contact {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: white;
+  padding: 9px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-weight: 650;
+}
+.nav-contact:hover {
+  color: white;
+  background: #215447;
+  border-color: #215447;
+  text-decoration: none !important;
+}
 .nav-contact span { margin-inline-start: 16px; }
 .menu-button { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
 
@@ -140,7 +162,7 @@ section[id] { scroll-margin-top: 20px; }
 html[lang="fa"] .hero h1 { line-height: 1.5; }
 .hero h1 span { color: #5a8169; }
 .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #74977a; margin-inline-end: 8px; }
-.lead { font-size: 1.18rem; line-height: 1.8; font-weight: 500; }
+.lead { font-size: 1.18rem; line-height: 1.8; font-weight: 500; max-width: 590px; }
 html[lang="fa"] .lead { line-height: 1.95; }
 .hero-detail { font-size: .94rem; color: var(--muted); max-width: 520px; }
 .actions { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-block: 28px; }
@@ -231,7 +253,8 @@ footer .brand { font-size: 22px; }
 }
 
 @media (max-width: 1050px) {
-  .site-nav { gap: 15px; font-size: .8rem; }
+  .site-nav { gap: 13px; font-size: .8rem; }
+  .nav-login { padding-inline-start: 14px; margin-inline-start: 0; }
   .nav-contact { padding-inline: 13px; }
   .language-button { padding-inline: 9px; }
 }
@@ -260,10 +283,22 @@ footer .brand { font-size: 22px; }
     gap: 0;
   }
   .site-nav.open { display: flex; flex-direction: column; }
-  .site-nav > a { padding: 12px; }
-  .nav-contact { margin-top: 10px; text-align: center; }
-  .language-switcher { width: 100%; margin-top: 8px; order: 20; }
+  .site-nav > a { padding: 11px 12px; }
+  .nav-login {
+    margin: 8px 0 0;
+    padding: 14px 12px 10px !important;
+    border-inline-start: 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .language-switcher { width: 100%; margin-top: 2px; }
   .language-button { width: 100%; justify-content: space-between; min-height: 46px; padding: 10px 12px; background: #f1f3ed; }
+  .nav-contact {
+    margin-top: 10px;
+    padding: 11px 16px !important;
+    text-align: center;
+    justify-content: center;
+  }
   .language-menu { position: static; width: 100%; max-width: none; margin-top: 6px; box-shadow: none; }
   .language-menu a { min-height: 44px; }
 }
@@ -271,24 +306,7 @@ footer .brand { font-size: 22px; }
 @media (max-width: 767px) {
   .container { padding-inline: 22px; }
   .section-pad { padding-block: 60px; }
-  .header-row { min-height: 72px; flex-wrap: wrap; }
   .brand { font-size: 23px; }
-  .menu-button { display: block; }
-  .site-nav {
-    display: none;
-    flex-basis: 100%;
-    width: 100%;
-    padding-block: 10px 20px;
-    align-items: stretch;
-    gap: 0;
-  }
-  .site-nav.open { display: flex; flex-direction: column; }
-  .site-nav > a { padding: 12px; }
-  .nav-contact { margin-top: 10px; text-align: center; }
-  .language-switcher { width: 100%; margin-top: 8px; order: 20; }
-  .language-button { width: 100%; justify-content: space-between; min-height: 46px; padding: 10px 12px; background: #f1f3ed; }
-  .language-menu { position: static; width: 100%; max-width: none; margin-top: 6px; box-shadow: none; }
-  .language-menu a { min-height: 44px; }
   .hero { padding-block: 35px 45px; }
   .hero-grid, .intro-grid, .portal-grid, .about-grid, .faq-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero h1 { font-size: 2.75rem; }
@@ -326,4 +344,9 @@ footer .brand { font-size: 22px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button, .language-chevron { transition: none; }
+}
+
+/* Mobile polish */
+@media (max-width: 380px) {
+  html[lang="fa"] .hero h1 { font-size: 2.35rem; }
 }
