@@ -33,6 +33,8 @@
 
   let step = 0, busy = false, token = '', widget, setup;
   const requestId = crypto.randomUUID();
+  const editKey = Array.from(crypto.getRandomValues(new Uint8Array(32)), b => b.toString(16).padStart(2, '0')).join('');
+  let submitted = false;
   const message = text => { error.textContent = text; error.hidden = !text; };
   const normalizeDigits = value => value.replace(/[۰-۹٠-٩]/g, c => String(c.charCodeAt(0) - (c >= '۰' ? 1776 : 1632)));
   const value = name => form.elements[name]?.value || '';
@@ -53,8 +55,7 @@
     if (step === 1) {
       contact.value = normalizeDigits(contact.value.trim());
       if (['whatsapp', 'phone'].includes(value('contact_method'))) {
-        contact.value = contact.value.replace(/[\s()-]/g, '');
-        contact.setCustomValidity(/^\+[1-9]\d{7,14}$/.test(contact.value) ? '' : copy.invalidPhone);
+        contact.setCustomValidity(/^\+[1-9]\d{7,14}$/.test(contact.value.replace(/[\s()-]/g, '')) ? '' : copy.invalidPhone);
       }
       if (value('contact_method') === 'telegram') contact.setCustomValidity(/^@?[A-Za-z0-9_]{1,32}$/.test(contact.value) ? '' : copy.invalidTelegram);
       form.elements.full_name.value = form.elements.full_name.value.trim();
@@ -68,7 +69,7 @@
     step = Math.max(0, Math.min(index, steps.length - 1));
     steps.forEach((el, i) => { el.hidden = i !== step; });
     progress.forEach((el, i) => { if (i === step) el.setAttribute('aria-current', 'step'); else el.removeAttribute('aria-current'); });
-    back.hidden = step === 0; next.hidden = step === steps.length - 1; submit.hidden = step !== steps.length - 1;
+    back.hidden = submitted || step === 0; next.hidden = step === steps.length - 1; submit.hidden = step !== steps.length - 1;
     message('');
     if (step === steps.length - 1) setupVerification();
     if (focus) steps[step].querySelector('h3')?.focus();
@@ -105,8 +106,8 @@
   function tracking() {
     const params = new URLSearchParams(window.location.search);
     return {
-      lead_source: 'website', landing_page: locale, referrer: document.referrer || null,
-      ...Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].map(key => [key, params.get(key) || null])),
+      lead_source: 'website', landing_page: locale, referrer: document.referrer.slice(0, 2048) || null,
+      ...Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].map(key => [key, params.get(key)?.slice(0, 200) || null])),
     };
   }
 
@@ -132,17 +133,20 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (busy || !validate()) return;
-    if (!await setupVerification()) return;
-    if (!token) { message(copy.securityRequired); return; }
+    if (step === 0) { show(1); return; }
+    busy = true;
+    if (!await setupVerification()) { busy = false; return; }
+    if (!token) { busy = false; message(copy.securityRequired); return; }
     busy = true; submit.disabled = true; back.disabled = true; submit.textContent = copy.sending; message('');
     const data = Object.fromEntries(new FormData(form));
-    const payload = { id: requestId, locale, goal: data.goal, timeline: data.timeline, budget: data.budget,
+    const payload = { id: requestId, edit_key: editKey, locale, goal: data.goal, timeline: data.timeline, budget: data.budget,
       payment: data.payment, deposit: null, full_name: data.full_name, contact_method: data.contact_method,
       contact: data.contact, notes: data.notes || '', consent: form.elements.consent.checked, website: data.website, token, ...tracking() };
     try {
       const response = await fetch(endpoint, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(25000) });
       const result = await response.json();
       if (!response.ok || result.id !== requestId) throw new Error(result.error || 'unavailable');
+      submitted = true;
       showSuccess(payload);
     } catch (e) {
       message(e.message === 'verification' ? copy.verificationExpired : copy.confirmationError);
