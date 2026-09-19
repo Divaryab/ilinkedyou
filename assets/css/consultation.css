@@ -35,6 +35,10 @@
 
 .consultation-success-title { display: flex; flex-direction: row; direction: rtl; align-items: baseline; gap: .5em; }
 .consultation-success-check { direction: ltr; unicode-bidi: isolate; flex: none; color: var(--accent, #176a65); }
+.consultation-success [data-contact-value], .consultation-ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; overflow-wrap: anywhere; }
+.consultation-success [data-edit] { margin-inline-end: 10px; }
+.consultation-success .secondary { border: 1px solid var(--green); background: transparent; color: var(--green); cursor: pointer; }
+html[dir="ltr"] .consultation-success-title { direction: ltr; }
 
 /* Mobile polish */
 @media (max-width: 480px) {

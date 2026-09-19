@@ -411,9 +411,8 @@
           </div>
           <div class="consultation-card">
             <ol class="consultation-progress" aria-label="مراحل فرم">
-              <li aria-current="step">۱. هدف شما</li>
-              <li>۲. بودجه و پرداخت</li>
-              <li>۳. راه ارتباطی</li>
+              <li aria-current="step">۱. خرید شما</li>
+              <li>۲. راه ارتباطی</li>
             </ol>
             <noscript
               ><p>
@@ -424,6 +423,7 @@
             <form
               id="consultation-form"
               data-endpoint="https://ilinkedyou-portal-preview.ilinkedyou-portal.workers.dev/api/consultations"
+              data-locale="fa"
               hidden
             >
               <div data-step>
@@ -484,8 +484,6 @@
                     >
                   </div>
                 </fieldset>
-              </div>
-              <div data-step hidden>
                 <h3 tabindex="-1">بودجه و شیوه پرداخت</h3>
                 <fieldset>
                   <legend>بودجه کل تقریبی خرید ملک چقدر است؟</legend>
@@ -544,44 +542,9 @@
                     >
                   </div>
                 </fieldset>
-                <fieldset data-deposit hidden>
-                  <legend>تقریباً چقدر برای پیش‌پرداخت آماده دارید؟</legend>
-                  <div class="consultation-options">
-                    <label class="consultation-option"
-                      ><input
-                        type="radio"
-                        name="deposit"
-                        value="under_20"
-                      />کمتر از ۲۰ هزار دلار</label
-                    >
-                    <label class="consultation-option"
-                      ><input type="radio" name="deposit" value="20_40" />۲۰ تا
-                      ۴۰ هزار دلار</label
-                    >
-                    <label class="consultation-option"
-                      ><input type="radio" name="deposit" value="40_75" />۴۰ تا
-                      ۷۵ هزار دلار</label
-                    >
-                    <label class="consultation-option"
-                      ><input
-                        type="radio"
-                        name="deposit"
-                        value="over_75"
-                      />بیشتر از ۷۵ هزار دلار</label
-                    >
-                    <label class="consultation-option"
-                      ><input type="radio" name="deposit" value="advice" />نیاز
-                      به راهنمایی دارم</label
-                    >
-                  </div>
-                </fieldset>
               </div>
               <div data-step hidden>
                 <h3 tabindex="-1">چطور با شما در ارتباط باشیم؟</h3>
-                <details class="consultation-summary">
-                  <summary>مرور پاسخ‌های شما</summary>
-                  <div data-summary></div>
-                </details>
                 <label class="consultation-field"
                   ><span>نام شما</span
                   ><input
@@ -679,16 +642,15 @@
               </div>
             </form>
             <div data-success class="consultation-success" hidden role="status">
-              <h3 tabindex="-1" class="consultation-success-title"><span>درخواست شما ثبت شد</span><span aria-hidden="true" class="consultation-success-check">✓</span></h3>
-              <p>
-                درخواستتان ثبت شد. بررسی می‌کنم و از طریق «<span data-contact-method>واتساپ</span>» با شما در تماس خواهم بود.
-              </p>
-              <p>علی | <bdi dir="ltr">iLinkedYou</bdi></p>
+              <h3 tabindex="-1" class="consultation-success-title"><span data-success-title>درخواست شما ثبت شد</span><span aria-hidden="true" class="consultation-success-check">✓</span></h3>
+              <p data-success-message>بررسی می‌کنم و حداکثر طی ۲۴ ساعت از طریق زیر با شما در تماس خواهم بود:</p>
+              <p><strong data-contact-method>واتساپ</strong> <bdi data-contact-value dir="ltr"></bdi></p>
               <p>
                 <small>کد پیگیری</small
-                ><bdi data-reference style="overflow-wrap: anywhere"></bdi>
+                ><bdi data-reference dir="ltr" class="consultation-ltr"></bdi>
               </p>
-              <a class="button primary" href="https://wa.me/995598088750"
+              <button type="button" class="button secondary" data-edit>ویرایش</button>
+              <a data-whatsapp class="button primary" href="https://wa.me/995598088750"
                 >ادامه گفت‌وگو در واتساپ ↙</a
               >
             </div>
