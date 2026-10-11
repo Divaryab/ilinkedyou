@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ilinkedyou.com/sitemap.xml
